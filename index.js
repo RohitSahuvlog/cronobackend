@@ -14,10 +14,8 @@ app.use(express.json())
 app.use(validate)
 app.use(cors())
 app.use("/auth",Signinrouter)
-
-app.use(authentication)
 app.use("/auth",Loginrouter)
-
+app.use(authentication)
 app.use("/crono",exerciseRoutes)
 app.use("/food",userFoodRoutes)
 

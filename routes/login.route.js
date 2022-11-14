@@ -3,7 +3,7 @@ const User = require("../model/auth.model")
 const bcryptjs = require("bcryptjs");
 Loginrouter =Router();
 const jwt = require("jsonwebtoken");
-// const authentication = require("../middleware/Authentications");
+const authentication = require("../middleware/Authentications");
 require("dotenv").config();
 const bycryptjs = require("bcryptjs")
 Loginrouter.post("/login",async(req,res)=>{
@@ -35,7 +35,7 @@ Loginrouter.post("/login",async(req,res)=>{
 
     
 })
-Loginrouter.post("/updateemail",async(req,res)=>{
+Loginrouter.post("/updateemail",authentication,async(req,res)=>{
     const { email,password,updateemail} =req.body
 
 
@@ -54,7 +54,7 @@ Loginrouter.post("/updateemail",async(req,res)=>{
 })
 })
 
-Loginrouter.post("/updatepassword",async(req,res)=>{
+Loginrouter.post("/updatepassword",authentication,async(req,res)=>{
     const { email,password,updateemail,updatepassword} =req.body
 
 

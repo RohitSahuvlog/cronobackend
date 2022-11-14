@@ -1,6 +1,6 @@
-const express=require("express")
-const { connection } = require("./config/db")
-const Signinrouter = require("./routes/signin.route")
+const express=require("express");
+const { connection } = require("./config/db");
+const Signinrouter = require("./routes/signin.route");
 const Loginrouter =require("./routes/login.route");
 const { validate } = require("./model/auth.model");
 const exerciseRoutes = require("./routes/userExercise.route");
